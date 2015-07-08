@@ -22,11 +22,11 @@
 
         <!-- Printing and PDF exports -->
         <script>
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName('head')[0].appendChild(link);
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
         </script>
 
         <!--[if lt IE 9]>
@@ -97,39 +97,44 @@
                                 </ul>
                             </li>
                         </ul>
+						<aside class="notes">
+							<ul>
+								<li><p>Neural Networks (Erfassung Gesamtbild, räumliche Informationen verloren)</p>
+							</ul>
+						</aside>
                     </section>
 
-			<section>
-			<h3 id="convolutional-neural-networks">Convolutional Neural Networks</h3>
-			<ul>
-				<li class="fragment"><p>Schichten: Convolutional &amp; (Max-)Pooling + vollvernetzt + Softmax</p>
-				</li>
-				<li class="fragment"><p>Erfassung von Konzepten</p>
-				</li>
-				<li class="fragment">Vordere Schichten: konkreter<ul>
-				<li>Kanten</li>
-				<li>Ecken</li>
-				</ul>
-				</li>
-				<li class="fragment"><p>Hintere Schichten: abstrakter</p>
-				<ul>
-				<li>Frucht</li>
-				<li>Tier</li>
-				</ul>
-				</li>
-				<li class="fragment"><p>Backpropagation</p>
-				</li>
-			</ul>
-			<p class="fragment">Sind die Konzepte überhaupt linear trennbar?</p>
-			<aside class="notes">
-				<ul>
-					<li>Convolutional → Feature-Extraktion</li>
-					<li>Pooling → Verringerung Varianz</li>
-					<li>Vollvernetzt → Assoziation</li>
-					<li>Mehr Filter reichen auch</li>
-				</ul>
-			</aside>
-			</section>
+					<section>
+						<h3 id="convolutional-neural-networks">Convolutional Neural Networks</h3>
+						<ul>
+							<li class="fragment"><p>Schichten: Convolutional &amp; (Max-)Pooling + vollvernetzt + Softmax</p>
+							</li>
+							<li class="fragment"><p>Erfassung von Konzepten</p>
+							</li>
+							<li class="fragment">Vordere Schichten: konkreter<ul>
+									<li>Kanten</li>
+									<li>Ecken</li>
+								</ul>
+							</li>
+							<li class="fragment"><p>Hintere Schichten: abstrakter</p>
+								<ul>
+									<li>Frucht</li>
+									<li>Tier</li>
+								</ul>
+							</li>
+							<li class="fragment"><p>Backpropagation</p>
+							</li>
+						</ul>
+						<p class="fragment">Sind die Konzepte überhaupt linear trennbar?</p>
+						<aside class="notes">
+							<ul>
+								<li>Convolutional → Feature-Extraktion</li>
+								<li>Pooling → Verringerung Varianz</li>
+								<li>Vollvernetzt → Assoziation</li>
+								<li>Mehr Filter reichen auch</li>
+							</ul>
+						</aside>
+					</section>
 
                     <section data-markdown data-separator-notes="^Notizen:">
                         <script type="text/template">
@@ -138,7 +143,7 @@
                             - Multilayer-Perzeptrone anstelle von linearen Filtern
 
                             - Vollvernetzte Schicht nun nicht mehr nötig
-                    
+
                             - Feature Maps der letzten Schicht entsprechen bereits Konfidenz
                         </script>
                     </section>
@@ -384,36 +389,37 @@
 
         <script>
 
-            // Full list of configuration options available at:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                controls: false,
-                progress: true,
-                history: true,
-                center: true,
-                transition: 'slide', // none/fade/slide/convex/concave/zoom
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-                // Optional reveal.js plugins
-                dependencies: [
-                    {src: 'lib/js/classList.js', condition: function () {
-                            return !document.body.classList;
-                        }},
-                    {src: 'plugin/markdown/marked.js', condition: function () {
-                            return !!document.querySelector('[data-markdown]');
-                        }},
-                    {src: 'plugin/markdown/markdown.js', condition: function () {
-                            return !!document.querySelector('[data-markdown]');
-                        }},
-                    {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
-                            return !!document.querySelector('pre code');
-                        }, callback: function () {
-                            hljs.initHighlightingOnLoad();
-                        }},
-                    {src: 'plugin/zoom-js/zoom.js', async: true},
-                    {src: 'plugin/notes/notes.js', async: true}
-                ]
-            });
-            Reveal.configure({slideNumber: 'c / t'});
+				// Optional reveal.js plugins
+				dependencies: [
+					{src: 'lib/js/classList.js', condition: function () {
+							return !document.body.classList;
+						}},
+					{src: 'plugin/markdown/marked.js', condition: function () {
+							return !!document.querySelector('[data-markdown]');
+						}},
+					{src: 'plugin/markdown/markdown.js', condition: function () {
+							return !!document.querySelector('[data-markdown]');
+						}},
+					{src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+							return !!document.querySelector('pre code');
+						}, callback: function () {
+							hljs.initHighlightingOnLoad();
+						}},
+					{src: 'plugin/zoom-js/zoom.js', async: true},
+					{src: 'plugin/remotes/remotes.js', async: true},
+					{src: 'plugin/notes/notes.js', async: true}
+				]
+			});
+			Reveal.configure({slideNumber: 'c / t'});
         </script>
 
     </body>
